@@ -1,0 +1,19 @@
+
+High-load shaper for Linux.
+
+Hangs several thousands of user sessions on one gigabit channel.
+
+Uses third-party utility: http://vcalinus.gemenii.ro/?p=9 - I've some patched it for my own needs but itt still works fine.
+
+Example of use:
+
+ - gcc prefixtree.c -o prefixtree
+ - put networks list into 'networks' file
+ - just execute php -q shaper.php
+   It will write configuration file for /sbin/tc and put it to tc
+
+Dependencies:
+
+ - needs some functions from my php-lib set: https://github.com/fycth/php-lib
+ - you need to inform the script about how to grab ID's and IP's of your clients. The code tries to grab it from MySQL database.
+   So you need proper MySQL database structure or you can put it into the script some another way.
